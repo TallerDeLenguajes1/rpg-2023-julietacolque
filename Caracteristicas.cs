@@ -17,5 +17,6 @@ namespace Caracteristicas
         public int Salud{ get => salud; set => salud = value; }
 
 
+
     }
 }
