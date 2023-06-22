@@ -6,9 +6,7 @@ namespace FabricaPersonajes
 {
     public class FabricaDePersonajes
     {
-        private Personaje personaje;
-
-        public Personaje Personaje { get => personaje; set => personaje = value; }
+       
 
         private Personaje InicializarPersonaje()
         {
