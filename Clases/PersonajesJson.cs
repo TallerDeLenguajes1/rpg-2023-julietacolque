@@ -47,7 +47,7 @@ namespace PersonajesEnJson
             
         }
 
-        private Boolean Existe(string path)
+        public Boolean Existe(string path)
         {
             return (File.Exists(path));
 

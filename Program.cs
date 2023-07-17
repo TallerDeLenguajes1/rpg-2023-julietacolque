@@ -1,32 +1,39 @@
 ﻿using FabricaPersonajes;
 using Personajes;
 using PersonajesEnJson;
-using System.Text.Json;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        var person1 = new FabricaDePersonajes().CrearPersonajeAleatorio();
-        var person2 = new FabricaDePersonajes().CrearPersonajeAleatorio();
-        var person3 = new FabricaDePersonajes().CrearPersonajeAleatorio();
+        var fPersonajesJson = new PersonajesJson(); //guardarPersonaje, leerP, existe
+        var fabrica = new FabricaDePersonajes(); //crear personajes
+        var listaPersonajes = new List<Personaje>(); //listaPersonajes
+        string path = "Personajes.json";
 
-        var ListaPersonajes = new List<Personaje>();
 
-        ListaPersonajes.Add(person1);
-        ListaPersonajes.Add(person2);
-        ListaPersonajes.Add(person3);
-      
-        foreach (var personaje in ListaPersonajes)
+        //A
+        if (fPersonajesJson.Existe(path) && new FileInfo(path).Length != 0)
         {
-            System.Console.WriteLine("\n");
-            MostrarPersonaje(personaje);
+            Console.WriteLine("El archivo exite y tiene elementos");
+            listaPersonajes = fPersonajesJson.LeerPersonajes(path);
+        }
+        else
+        {//B
+            for (int i = 0; i < 10; i++)
+            {
+                listaPersonajes.Add(fabrica.CrearPersonajeAleatorio()); 
+            }
+            //guardo la lista de personajes en un json.
+            fPersonajesJson.GuardarPersonajes(listaPersonajes,path);
         }
 
-        
-         
-
-       
+        //mostrar Personajes 
+        foreach (var personaje in listaPersonajes)
+        {
+            MostrarPersonaje(personaje);
+            System.Console.WriteLine("\n");
+        }
     }
 
     public static void MostrarPersonaje(Personaje personaje)
