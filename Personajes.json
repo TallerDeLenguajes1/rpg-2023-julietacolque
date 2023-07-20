@@ -1,119 +1,15 @@
 [
     {
         "Datos": {
-            "Tipo": "Boxeador",
+            "Tipo": "Alien",
             "Nombre": "panchi",
-            "Apodo": "perdedor",
-            "FechaNacimiento": "1753-01-28T00:00:00",
-            "Edad": 270
-        },
-        "Caracteristicas": {
-            "Velocidad": 1,
-            "Destreza": 1,
-            "Fuerza": 3,
-            "Nivel": 5,
-            "Armadura": 1,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Ninja",
-            "Nombre": "ragnar",
             "Apodo": "Invencible",
-            "FechaNacimiento": "1882-05-04T00:00:00",
-            "Edad": 141
-        },
-        "Caracteristicas": {
-            "Velocidad": 3,
-            "Destreza": 1,
-            "Fuerza": 1,
-            "Nivel": 10,
-            "Armadura": 7,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Ninja",
-            "Nombre": "huguito",
-            "Apodo": "ganador",
-            "FechaNacimiento": "1914-06-14T00:00:00",
-            "Edad": 109
-        },
-        "Caracteristicas": {
-            "Velocidad": 9,
-            "Destreza": 1,
-            "Fuerza": 9,
-            "Nivel": 2,
-            "Armadura": 2,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Robot",
-            "Nombre": "ragnar",
-            "Apodo": "perdedor",
-            "FechaNacimiento": "1983-01-30T00:00:00",
-            "Edad": 40
-        },
-        "Caracteristicas": {
-            "Velocidad": 6,
-            "Destreza": 1,
-            "Fuerza": 3,
-            "Nivel": 1,
-            "Armadura": 4,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Ninja",
-            "Nombre": "huguito",
-            "Apodo": "ganador",
-            "FechaNacimiento": "2019-09-20T00:00:00",
-            "Edad": 3
-        },
-        "Caracteristicas": {
-            "Velocidad": 8,
-            "Destreza": 5,
-            "Fuerza": 10,
-            "Nivel": 4,
-            "Armadura": 8,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Robot",
-            "Nombre": "ragnar",
-            "Apodo": "Invencible",
-            "FechaNacimiento": "1797-10-21T00:00:00",
-            "Edad": 225
-        },
-        "Caracteristicas": {
-            "Velocidad": 6,
-            "Destreza": 4,
-            "Fuerza": 1,
-            "Nivel": 5,
-            "Armadura": 3,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Robot",
-            "Nombre": "ragnar",
-            "Apodo": "ganador",
-            "FechaNacimiento": "1928-08-01T00:00:00",
-            "Edad": 95
-        },
-        "Caracteristicas": {
+            "FechaNacimiento": "1830-12-27T00:00:00",
+            "Edad": 192,
             "Velocidad": 4,
             "Destreza": 1,
-            "Fuerza": 1,
-            "Nivel": 4,
+            "Fuerza": 8,
+            "Nivel": 9,
             "Armadura": 5,
             "Salud": 100
         }
@@ -121,34 +17,15 @@
     {
         "Datos": {
             "Tipo": "Boxeador",
-            "Nombre": "gorda",
-            "Apodo": "perdedor",
-            "FechaNacimiento": "1902-06-23T00:00:00",
-            "Edad": 121
-        },
-        "Caracteristicas": {
-            "Velocidad": 2,
-            "Destreza": 3,
-            "Fuerza": 10,
-            "Nivel": 5,
-            "Armadura": 2,
-            "Salud": 100
-        }
-    },
-    {
-        "Datos": {
-            "Tipo": "Ninja",
-            "Nombre": "gorda",
-            "Apodo": "perdedor",
-            "FechaNacimiento": "1843-10-10T00:00:00",
-            "Edad": 179
-        },
-        "Caracteristicas": {
-            "Velocidad": 4,
-            "Destreza": 2,
-            "Fuerza": 1,
+            "Nombre": "panchi",
+            "Apodo": "Invencible",
+            "FechaNacimiento": "1928-03-05T00:00:00",
+            "Edad": 95,
+            "Velocidad": 1,
+            "Destreza": 1,
+            "Fuerza": 5,
             "Nivel": 6,
-            "Armadura": 10,
+            "Armadura": 3,
             "Salud": 100
         }
     },
@@ -157,15 +34,118 @@
             "Tipo": "Alien",
             "Nombre": "gorda",
             "Apodo": "Invencible",
-            "FechaNacimiento": "1950-03-28T00:00:00",
-            "Edad": 73
-        },
-        "Caracteristicas": {
-            "Velocidad": 4,
+            "FechaNacimiento": "1759-05-22T00:00:00",
+            "Edad": 264,
+            "Velocidad": 9,
             "Destreza": 1,
-            "Fuerza": 9,
-            "Nivel": 7,
-            "Armadura": 10,
+            "Fuerza": 6,
+            "Nivel": 8,
+            "Armadura": 1,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Boxeador",
+            "Nombre": "Perri",
+            "Apodo": "Invencible",
+            "FechaNacimiento": "1822-06-10T00:00:00",
+            "Edad": 201,
+            "Velocidad": 3,
+            "Destreza": 1,
+            "Fuerza": 6,
+            "Nivel": 5,
+            "Armadura": 5,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Boxeador",
+            "Nombre": "gorda",
+            "Apodo": "Invencible",
+            "FechaNacimiento": "1998-09-14T00:00:00",
+            "Edad": 24,
+            "Velocidad": 2,
+            "Destreza": 3,
+            "Fuerza": 3,
+            "Nivel": 5,
+            "Armadura": 5,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Boxeador",
+            "Nombre": "huguito",
+            "Apodo": "Invencible",
+            "FechaNacimiento": "1887-05-15T00:00:00",
+            "Edad": 136,
+            "Velocidad": 6,
+            "Destreza": 3,
+            "Fuerza": 1,
+            "Nivel": 9,
+            "Armadura": 6,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Alien",
+            "Nombre": "huguito",
+            "Apodo": "ganador",
+            "FechaNacimiento": "1937-08-16T00:00:00",
+            "Edad": 85,
+            "Velocidad": 5,
+            "Destreza": 5,
+            "Fuerza": 6,
+            "Nivel": 4,
+            "Armadura": 2,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Boxeador",
+            "Nombre": "huguito",
+            "Apodo": "Invencible",
+            "FechaNacimiento": "1734-10-19T00:00:00",
+            "Edad": 288,
+            "Velocidad": 3,
+            "Destreza": 4,
+            "Fuerza": 2,
+            "Nivel": 8,
+            "Armadura": 9,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Ninja",
+            "Nombre": "Perri",
+            "Apodo": "perdedor",
+            "FechaNacimiento": "1815-05-31T00:00:00",
+            "Edad": 208,
+            "Velocidad": 10,
+            "Destreza": 3,
+            "Fuerza": 8,
+            "Nivel": 9,
+            "Armadura": 8,
+            "Salud": 100
+        }
+    },
+    {
+        "Datos": {
+            "Tipo": "Boxeador",
+            "Nombre": "Perri",
+            "Apodo": "perdedor",
+            "FechaNacimiento": "2000-10-13T00:00:00",
+            "Edad": 22,
+            "Velocidad": 10,
+            "Destreza": 5,
+            "Fuerza": 4,
+            "Nivel": 10,
+            "Armadura": 8,
             "Salud": 100
         }
     }

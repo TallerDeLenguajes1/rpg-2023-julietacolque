@@ -1,0 +1,18 @@
+empiezan en 
+indice1 = 0
+indice2 = 1;
+funcion batalla recursiva(lista, indice 1, indice2){
+    
+    indice2<= lista.count();
+    ganador = pelea(lista[indice1],lista[indice2]);
+    //caso de que pers1 pierda
+    if(lista[indice1].datos.salud<= 0){
+        lista.Remove(lista[indice1])
+        lista[indice2].datos.destreza+=7; aumento atributos del 2
+    }else{
+        lista.Remove(lista[indice2])
+         lista[indice1].datos.destreza+=7; aumento atributos del 1
+    }
+    indice1 = indice2+1;
+    indice2 = indice1 + 1;
+}

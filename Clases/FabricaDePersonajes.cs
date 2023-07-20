@@ -1,7 +1,5 @@
 using Personajes;
-using Caracteristicas;
-using Datos;
-
+using DatosPersonaje;
 namespace FabricaPersonajes
 {
     public class FabricaDePersonajes
@@ -11,16 +9,15 @@ namespace FabricaPersonajes
         private Personaje InicializarPersonaje()
         {
             Personaje personaje = new Personaje();
-            personaje.Caracteristicas = new Caracteristica();
-            personaje.Datos = new Dato();
+            personaje.Datos = new Datos();
             return personaje;
         }  
 
        public Personaje CrearPersonajeAleatorio()
         {
             Personaje personaje = InicializarPersonaje();
-            personaje.InicializarDatos(personaje);
-            personaje.InicializarCaracteristicas(personaje);
+            personaje.InicializarInfo(personaje);
+            personaje.InicializarAtributos(personaje);
 
             return personaje;
         }
