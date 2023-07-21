@@ -5,7 +5,8 @@ namespace DatosPersonaje
 
         private string tipo;
         private string nombre;
-        private string apodo;
+        private int peso;
+        private int altura;
         private DateTime fechaNacimiento;
         private int edad;
         private int velocidad;
@@ -17,7 +18,8 @@ namespace DatosPersonaje
 
         public string Tipo { get => tipo; set => tipo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Apodo { get => apodo; set => apodo = value; }
+        public int Peso { get => peso; set => peso = value; }
+        public int Altura { get => altura; set => altura = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int Edad { get => edad; set => edad = value; }
         public int Velocidad { get => velocidad; set => velocidad = value; }

@@ -22,7 +22,8 @@ internal class Program
             {
                 visuales.Menu();
                 System.Console.WriteLine("Ingrese la opcion: ");
-                int.TryParse(Console.ReadLine(), out entrada);
+                 entrada = int.Parse(Console.ReadLine());
+                
             } while (entrada < 1 || entrada > 4);
 
             switch (entrada)
@@ -43,6 +44,11 @@ internal class Program
             }
         }
 
+
+
+
+
+
     }
 
     public static List<Personaje> CargaDePersonajes(string path)
@@ -57,7 +63,7 @@ internal class Program
         }
         else
         {//B
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 listaPersonajes.Add(fabrica.CrearPersonajeAleatorio());
             }
@@ -73,7 +79,7 @@ internal class Program
     }
     public static void MostrarDatos(Personaje personaje)
     {
-        string personajeDatos = $"Nombre:{personaje.Datos.Nombre}\nTipo:{personaje.Datos.Tipo}\nApodo:{personaje.Datos.Apodo}\nFechaNacimiento:{personaje.Datos.FechaNacimiento.ToShortDateString()}\nEdad:{personaje.Datos.Edad}";
+        string personajeDatos = $"Nombre:{personaje.Datos.Nombre}\nTipo:{personaje.Datos.Tipo}\nAltura:{personaje.Datos.Altura}\nPeso:{personaje.Datos.Peso}\nFechaNacimiento:{personaje.Datos.FechaNacimiento.ToShortDateString()}\nEdad:{personaje.Datos.Edad}";
         System.Console.WriteLine(personajeDatos);
 
     }
@@ -146,12 +152,12 @@ internal class Program
         int aleatorio1, aleatorio2, ganador, round = 0;
 
         //dos personajes aleatorios,
-        while (lista.Count() > 1)
+        while (lista.Count() >= 2)
         {
             do
             {
-                aleatorio1 = rnd.Next(0, lista.Count());
-                aleatorio2 = rnd.Next(0, lista.Count());
+                aleatorio1 = rnd.Next(lista.Count());
+                aleatorio2 = rnd.Next(lista.Count());
 
             } while (aleatorio1 == aleatorio2);
 
@@ -180,6 +186,7 @@ internal class Program
 
             }
             round += 1;
+            
 
         }
         visuales.Ganador();

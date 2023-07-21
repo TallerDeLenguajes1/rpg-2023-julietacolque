@@ -1,4 +1,6 @@
 using DatosPersonaje;
+using PokemonDatos;
+using APIs;
 
 namespace Personajes
 {
@@ -23,13 +25,22 @@ namespace Personajes
 
         public Personaje InicializarInfo(Personaje personaje)
         {
-            string[] nombres = { "Perri", "gorda", "ragnar", "panchi", "huguito" };
-            string[] Apodos = { "Invencible", "perdedor", "ganador" };
-            string[] Tipos = { "Alien", "Ninja", "Robot", "Boxeador" };
+            //nombre, tipo ,peso y altura
+            var listaNombres = new List<Pokemon>();
+            var obtener = new API();
+            listaNombres = obtener.ObtenerApi();
+            
             Random rnd = new Random();
-            personaje.Datos.Tipo = Tipos[rnd.Next(Tipos.Length)];
-            personaje.Datos.Nombre = nombres[rnd.Next(nombres.Length)];
-            personaje.Datos.Apodo = Apodos[rnd.Next(Apodos.Length)];
+          
+            personaje.Datos.Nombre = listaNombres[rnd.Next(listaNombres.Count)].name;
+
+            var pokemonInfo = obtener.ObtenerInfo(personaje.datos.Nombre);
+          
+
+            personaje.Datos.Tipo = pokemonInfo.types[rnd.Next(pokemonInfo.types.Count)].type.name;
+            
+            personaje.datos.Peso = pokemonInfo.weight;
+            personaje.datos.Altura = pokemonInfo.height;
             personaje.Datos.FechaNacimiento = personaje.Datos.GenerarFechaNacimiento();
             personaje.Datos.Edad = personaje.Datos.CalcularEdad(personaje.Datos.FechaNacimiento);
             return personaje;
