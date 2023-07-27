@@ -13,7 +13,7 @@ internal class Program
         string path = "Personajes.json";
         int entrada, bandera = 1;
 
-        //carga
+        // //carga
         listaPersonajes = CargaDePersonajes(path);
         System.Console.WriteLine("-------------BIENVENIDO---------");
         while (bandera == 1)
@@ -22,32 +22,36 @@ internal class Program
             {
                 visuales.Menu();
                 System.Console.WriteLine("Ingrese la opcion: ");
-                 entrada = int.Parse(Console.ReadLine());
-                
-            } while (entrada < 1 || entrada > 4);
+                entrada = int.Parse(Console.ReadLine());
+
+            } while (entrada < 1 || entrada > 3);
 
             switch (entrada)
             {
                 case 1:
+                    //si ya se efectuo la batalla que se borre el json, y se genere uno
+                    if (listaPersonajes.Count() == 1)
+                    {
+                        //la batalla ya se efectuo;
+                        File.Delete(path);//elimino el json;
+                        listaPersonajes = CargaDePersonajes(path);
+                    }
                     Batalla(listaPersonajes);
+
+
                     break;
-                case 3:
+                case 2:
                     System.Console.WriteLine(".......Listado Personajes......");
                     ListarPersonajes(listaPersonajes);
                     System.Console.WriteLine("...............................");
                     break;
-                case 4:
+                case 3:
                     bandera = 0;
                     System.Console.WriteLine("ADIOS :)");
                     break;
 
             }
         }
-
-
-
-
-
 
     }
 
@@ -85,11 +89,46 @@ internal class Program
     }
     public static void MostrarCaracteristicas(Personaje personaje)
     {
-        string personajeCar = $"Destreza:{personaje.Datos.Destreza}\nVelocidad:{personaje.Datos.Velocidad}\nFuerza:{personaje.Datos.Fuerza}\nArmadura:{personaje.Datos.Armadura}\nNivel:{personaje.Datos.Nivel}";
+        string personajeCar = $"Destreza:{personaje.Datos.Destreza}\nVelocidad:{personaje.Datos.Velocidad}\nFuerza:{personaje.Datos.Fuerza}\nArmadura:{personaje.Datos.Armadura}\nNivel:{personaje.Datos.Nivel}\nPeleas ganadas: {personaje.Datos.Peleas}";
         System.Console.WriteLine(personajeCar);
 
     }
 
+
+    public static Personaje MejoraPersonaje(Personaje personaje)
+    {
+        personaje.Datos.Peleas += 1;
+        personaje.Datos.Salud = 100;
+        int puntos = personaje.Datos.Peleas * 5;
+        int num;
+        var rnd = new Random(); //velocidad destreza nivel fuerza y armadura
+        while (puntos != 0)
+        {
+            num = rnd.Next(0, 5);
+            switch (num)
+            {
+                case 0:
+                    personaje.Datos.Velocidad += 5; puntos -= 5;
+                    break;
+                case 1:
+                    personaje.Datos.Destreza += 5; puntos -= 5;
+                    break;
+                case 2:
+                    personaje.Datos.Nivel += 5; puntos -= 5;
+                    break;
+                case 3:
+                    personaje.Datos.Fuerza += 5; puntos -= 5;
+                    break;
+                case 4:
+                    personaje.Datos.Armadura += 5; puntos -= 5;
+                    break;
+
+            }
+
+        }
+        return personaje;
+
+    }
     public static void ListarPersonajes(List<Personaje> listaPersonajes)
     {
         foreach (var personaje in listaPersonajes)
@@ -131,17 +170,20 @@ internal class Program
             danio = CalculadoraDeDanio(personaje1, personaje2);
             personaje2.Datos.Salud = personaje2.Datos.Salud - danio;
             turno = 2;
+            System.Console.WriteLine($"Turno de:{personaje1.Datos.Nombre.ToUpper()}\nDanio Provocado: {danio}\nSalud Oponente:{personaje2.Datos.Salud}\n ");
             return Pelea(personaje1, personaje2, turno);
         }
         else
         {
             danio = CalculadoraDeDanio(personaje2, personaje1);
             personaje1.Datos.Salud = personaje1.Datos.Salud - danio;
+            System.Console.WriteLine($"Turno de:{personaje2.Datos.Nombre.ToUpper()}\nDanio Provocado: {danio}\nSalud Oponente:{personaje1.Datos.Salud}\n ");
             turno = 1;
             return Pelea(personaje1, personaje2, turno);
         }
 
     }
+
 
 
     public static void Batalla(List<Personaje> lista)
@@ -163,34 +205,34 @@ internal class Program
 
 
             //presentacion de la pelea
-            System.Console.WriteLine($"================ROUND {round}===============");
+            System.Console.WriteLine($"==={lista[aleatorio1].Datos.Nombre}====ROUND {round}==={lista[aleatorio2].Datos.Nombre}===");
             visuales.Versus(lista[aleatorio1], lista[aleatorio2]);
+            System.Console.WriteLine("<-COMENTARIOS->");
             ganador = Pelea(lista[aleatorio1], lista[aleatorio2], 1);
 
+            System.Console.WriteLine("#### GANADOR ####\n");
             if (ganador == 2)
             {
-                lista[aleatorio2].Datos.Armadura += 5;
-                lista[aleatorio2].Datos.Salud = 100;
-                System.Console.WriteLine("#### GANADOR ####\n");
+
+                lista[aleatorio2] = MejoraPersonaje(lista[aleatorio2]);
                 System.Console.WriteLine(visuales.Presentacion(lista[aleatorio2]));
                 lista.Remove(lista[aleatorio1]);
 
             }
             else
             {
-                lista[aleatorio1].Datos.Armadura += 5;
-                lista[aleatorio1].Datos.Salud = 100;
-                System.Console.WriteLine("#### GANADOR ####\n");
+                lista[aleatorio1] = MejoraPersonaje(lista[aleatorio1]);
                 System.Console.WriteLine(visuales.Presentacion(lista[aleatorio1]));
                 lista.Remove(lista[aleatorio2]);
 
             }
             round += 1;
-            
+
 
         }
         visuales.Ganador();
         MostrarPersonaje(lista[0]);
+        System.Console.WriteLine("\n");
     }
 }
 

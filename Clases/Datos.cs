@@ -16,6 +16,8 @@ namespace DatosPersonaje
         private int armadura;
         private int salud = 100;
 
+        private int peleas = 0;
+
         public string Tipo { get => tipo; set => tipo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int Peso { get => peso; set => peso = value; }
@@ -28,12 +30,12 @@ namespace DatosPersonaje
         public int Nivel { get => nivel; set => nivel = value; }
         public int Armadura { get => armadura; set => armadura = value; }
         public int Salud { get => salud; set => salud = value; }
+        public int Peleas { get => peleas; set => peleas = value; }
 
         public DateTime GenerarFechaNacimiento()
         {
 
             DateTime fechaComienzo = new DateTime(1723, 1, 1);
-            //edad de personaje de 0 a 300;
             Random diasAleatorios = new Random();
             // diferencia de dias entre la fecha ingresada como comienzo a la fecha de actual.
             int rango = (DateTime.Today - fechaComienzo).Days;

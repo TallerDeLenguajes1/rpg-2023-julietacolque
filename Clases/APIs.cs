@@ -1,4 +1,3 @@
-//AQUI DEBO USAR LA CLASE POKEMON PARA ALMACENAR LOS NOMBRES
 using System.Net;
 using PokemonDatos;
 using System.Text.Json;
