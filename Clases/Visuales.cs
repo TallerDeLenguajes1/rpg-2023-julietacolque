@@ -33,7 +33,7 @@ namespace Visuales
             System.Console.WriteLine(corona);
         }
         public void Menu(){
-                System.Console.WriteLine($"********MENU********\n1-Simulacion de pelea\n2-Crear tu Personaje\n3-Listar Personajes\n4-Salir");
+                System.Console.WriteLine($"********MENU********\n1-Simulacion de pelea\n2-Listar Personajes\n3-Salir");
         }
     }
 }
